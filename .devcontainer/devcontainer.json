@@ -1,0 +1,46 @@
+{
+  "name": "NT Fairfax Dev",
+
+  // https://github.com/dbarjs/devcontainer-images/tree/main/src/node
+	"image": "dbarjs/node-devcontainer:current",
+
+  // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      // 👇 Uncomment to use latest git version (can increase the container build time on Debian)
+      // "version": "latest"
+    },
+    // https://github.com/dbarjs/devcontainer-features/tree/main/src/code-essentials
+    "ghcr.io/dbarjs/devcontainer-features/code-essentials:0.1.3": { },
+    // https://github.com/dbarjs/devcontainer-features/tree/main/src/code-extras
+    "ghcr.io/dbarjs/devcontainer-features/code-extras:0.1.3": { },
+    // https://github.com/dbarjs/devcontainer-features/tree/main/src/code-vue
+    "ghcr.io/dbarjs/devcontainer-features/code-vue:0.0.1": { },
+    // https://github.com/dbarjs/devcontainer-features/tree/main/src/zsh
+    "ghcr.io/dbarjs/devcontainer-features/zsh:latest": { }
+  },
+
+  // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    // 3000
+  ],
+
+  // Install global CLI tools, copy SSH keys, and remove 1Password SSH agent configuration.
+  "postCreateCommand": "npm install -g @devcontainers/cli @antfu/ni",
+
+  // 👇 Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dotfiles.repository": "https://github.com/dbarjs/devcontainer-dotfiles.git",
+        "git.defaultCloneDirectory": "/workspaces",
+        "vite.autoStart": false,
+        "[vue]": {
+          "editor.defaultFormatter": "Vue.volar"
+        }
+      }
+    }
+  },
+
+  "remoteUser": "node"
+}

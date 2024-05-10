@@ -1,5 +1,5 @@
 {
-  "name": "NT Fairfax Dev",
+  "name": "Nuxt Docs Pro Dev",
 
   // https://github.com/dbarjs/devcontainer-images/tree/main/src/node
 	"image": "dbarjs/node-devcontainer:current",
